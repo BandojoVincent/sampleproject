@@ -32,10 +32,10 @@
         user-select: none;
       }
 
-      @media (min-width: 350px){
+      @media (min-width: 500px){
       	.badd{
-        	height: 300px;
-    			width: 350px;
+        	height: 500px;
+    			width: 500px;
     			background-color: whitesmoke;
     			color: black;
     			padding: 20px;
@@ -57,7 +57,7 @@
 
       #chartdiv {
       width: 100%;
-      height: 500px;
+      height: 100;
       margin: auto;
       }
       
@@ -127,6 +127,7 @@ am4core.useTheme(am4themes_animated);
 var chartMin = 0.01;
 var chartMax = 500;
 
+
 var data = {
   score: 1 ,
   gradingData: [
@@ -161,6 +162,8 @@ var data = {
       highScore: 500    }
   ]
 };
+
+
 
 /**
 Grading Lookup
@@ -254,7 +257,7 @@ var matchingGrade = lookUpGrade(data.score, data.gradingData);
 
 var label = chart.radarContainer.createChild(am4core.Label);
 label.isMeasured = false;
-label.fontSize = "6em";
+label.fontSize = "5em";
 label.x = am4core.percent(50);
 label.paddingBottom = 15;
 label.horizontalCenter = "middle";
@@ -270,7 +273,7 @@ label.fill = am4core.color(matchingGrade.color);
 
 var label2 = chart.radarContainer.createChild(am4core.Label);
 label2.isMeasured = false;
-label2.fontSize = "4em";
+label2.fontSize = "2em";
 label2.horizontalCenter = "middle";
 label2.verticalCenter = "bottom";
 label2.text = matchingGrade.title.toUpperCase();
@@ -327,6 +330,7 @@ setInterval(function() {
     // for(i in dataArray){
     //   console.log(last_item);
     // }
+
     var value = parseFloat(last_item);
     hand.showValue(value, 1000, am4core.ease.cubicOut);
   })
@@ -387,3 +391,4 @@ setInterval(function ( ) {
 
 </body>
 </html>
+
